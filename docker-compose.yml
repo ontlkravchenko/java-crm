@@ -1,0 +1,11 @@
+version: '3'
+services:
+  postgres:
+    image: postgres
+    container_name: wereis-db
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=QazWsxEdc
+      - POSTGRES_DB=wereis-main

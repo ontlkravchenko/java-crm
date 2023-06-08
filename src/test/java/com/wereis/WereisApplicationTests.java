@@ -1,4 +1,4 @@
-package com.resume.wereis;
+package com.wereis;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

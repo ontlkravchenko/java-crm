@@ -1,4 +1,4 @@
-package com.resume.wereis;
+package com.wereis;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
