@@ -1,7 +1,7 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/wereis-main
-    username: admin
+    url: jdbc:postgresql://localhost:5432/whereis-main
+    username: postgres
     password: QazWsxEdc
     driver-class-name: org.postgresql.Driver
   jpa:
