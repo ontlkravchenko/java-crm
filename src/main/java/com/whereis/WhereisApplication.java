@@ -1,13 +1,13 @@
-package com.wereis;
+package com.whereis;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class WereisApplication {
+public class WhereisApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(WereisApplication.class, args);
+        SpringApplication.run(WhereisApplication.class, args);
     }
 
 }

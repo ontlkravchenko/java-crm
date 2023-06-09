@@ -1,10 +1,10 @@
-package com.wereis;
+package com.whereis;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class WereisApplicationTests {
+class WhereisApplicationTests {
 
     @Test
     void contextLoads() {
