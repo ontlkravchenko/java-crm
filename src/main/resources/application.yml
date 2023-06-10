@@ -1,6 +1,11 @@
 spring:
   datasource:
-    url: jdbc:postgresql://db:5432/whereis-main
+#    Docker:
+#    url: jdbc:postgresql://db:5432/whereis-main
+
+#    Development:
+    url: jdbc:postgresql://localhost:5432/whereis-main
+
     username: admin
     password: admin
     driver-class-name: org.postgresql.Driver
