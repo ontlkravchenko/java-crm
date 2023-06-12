@@ -19,6 +19,7 @@ public class HomeController {
 
     @GetMapping
     public String home(Model model) {
+        // This is to test if DB works
         List<Warehouse> warehouses = warehouseService.findAll();
         model.addAttribute("warehouses", warehouses);
         return "home";
