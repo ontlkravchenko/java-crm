@@ -1,13 +1,8 @@
 spring:
   datasource:
-#    Docker:
-#    url: jdbc:postgresql://db:5432/whereis-main
-
-#    Development:
-    url: jdbc:postgresql://localhost:5432/whereis-main
-
-    username: admin
-    password: admin
+    url: jdbc:postgresql://whereis-db.crsppowtrm9t.us-west-2.rds.amazonaws.com:5432/postgres
+    username: whereis_admin
+    password: q1234567890
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
