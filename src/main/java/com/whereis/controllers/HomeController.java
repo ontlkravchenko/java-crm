@@ -19,6 +19,10 @@ public class HomeController {
 
     @GetMapping
     public String home(Model model) {
+        Warehouse w = new Warehouse();
+        w.setName("ITWORKS???");
+        w.setCapacity(50);
+        warehouseService.save(w);
         // This is to test if DB works
         List<Warehouse> warehouses = warehouseService.findAll();
         model.addAttribute("warehouses", warehouses);
