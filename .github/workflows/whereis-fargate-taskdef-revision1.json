@@ -1,14 +1,14 @@
 {
     "containerDefinitions": [
         {
-            "name": "whereis",
+            "name": "whereis-fargate",
             "image": "855630887066.dkr.ecr.eu-central-1.amazonaws.com/whereis-repo",
             "cpu": 0,
             "portMappings": [
                 {
-                    "name": "whereis-8080-tcp",
-                    "containerPort": 8080,
-                    "hostPort": 8080,
+                    "name": "whereis-fargate-80-tcp",
+                    "containerPort": 80,
+                    "hostPort": 80,
                     "protocol": "tcp",
                     "appProtocol": "http"
                 }
@@ -23,14 +23,14 @@
                 "logDriver": "awslogs",
                 "options": {
                     "awslogs-create-group": "true",
-                    "awslogs-group": "/ecs/whereis-task-def",
+                    "awslogs-group": "/ecs/whereis-fargate-taskdef",
                     "awslogs-region": "eu-central-1",
                     "awslogs-stream-prefix": "ecs"
                 }
             }
         }
     ],
-    "family": "whereis-task-def",
+    "family": "whereis-fargate-taskdef",
     "executionRoleArn": "arn:aws:iam::855630887066:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
     "volumes": [],
