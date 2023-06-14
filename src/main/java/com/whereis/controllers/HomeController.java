@@ -19,7 +19,6 @@ public class HomeController {
 
     @GetMapping
     public String home(Model model) {
-        // Comment only for git commit
         List<Warehouse> warehouses = warehouseService.findAll();
         model.addAttribute("warehouses", warehouses);
         return "home";
