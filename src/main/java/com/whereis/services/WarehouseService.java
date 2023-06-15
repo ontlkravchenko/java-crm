@@ -9,6 +9,11 @@ import java.util.List;
 
 @Service
 public class WarehouseService {
+
+    /*
+    Created in order to make it more convenient to work with warehouseRepo
+     */
+
     @Autowired
     private WarehouseRepo warehouseRepo;
 

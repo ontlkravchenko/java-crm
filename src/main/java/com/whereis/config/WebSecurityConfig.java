@@ -29,7 +29,18 @@ public class WebSecurityConfig {
 
                 .authorizeHttpRequests(
                         auth -> auth
-                                .anyRequest().permitAll()
+                                .requestMatchers("/login").permitAll()
+                                .requestMatchers("/register").permitAll()
+                                .anyRequest().authenticated()
+                )
+                .formLogin(
+                        login -> login
+                                .loginPage("/login")
+                                .defaultSuccessUrl("/")
+                )
+                .logout(
+                        logout -> logout
+                                .logoutUrl("/logout")
                 )
                 .httpBasic(Customizer.withDefaults())
 

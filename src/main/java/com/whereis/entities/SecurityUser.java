@@ -18,6 +18,9 @@ public class SecurityUser implements UserDetails {
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         // Convert user's roles from CSV to list (e.g. User, Admin -> ["User", "Admin"]
+        if (user.getRoles() == null) {
+            user.setRoles("User,");
+        }
         return Arrays.stream(user
                         .getRoles()
                         .split(",")
