@@ -8,6 +8,6 @@ public class LogOutController {
 
     @GetMapping("logout")
     public String showLogOutForm() {
-        return "logout";
+        return "security/logout";
     }
 }

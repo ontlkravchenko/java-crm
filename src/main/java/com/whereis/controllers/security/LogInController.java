@@ -14,6 +14,6 @@ public class LogInController {
 
     @GetMapping("login")
     public String showLoginForm(Model model) {
-        return "login";
+        return "security/login";
     }
 }
