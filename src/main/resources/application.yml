@@ -1,9 +1,9 @@
 spring:
   datasource:
 #    RDS
-#    url: jdbc:postgresql://whereis-db.crsppowtrm9t.us-west-2.rds.amazonaws.com:5432/postgres
+    url: jdbc:postgresql://whereis-db.crsppowtrm9t.us-west-2.rds.amazonaws.com:5432/postgres
 #    Docker
-    url: jdbc:postgresql://localhost:5432/postgres
+#    url: jdbc:postgresql://localhost:5432/postgres
     username: whereis_admin
     password: q1234567890
     driver-class-name: org.postgresql.Driver
