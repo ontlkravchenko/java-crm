@@ -12,7 +12,6 @@ import java.util.List;
 // Lombok
 @Data
 @RequiredArgsConstructor
-@NoArgsConstructor(access = AccessLevel.PRIVATE, force = true)
 // Data
 @Entity
 @Table(name = "users")
@@ -21,15 +20,15 @@ public class User {
     private Long id;
 
     @Length(max = 50)
-    private final String username;
+    private String username;
 
     @Length(max = 255)
-    private final String eMail;
+    private String eMail;
 
-    private final String password;
+    private String password;
 
-    private final String roles;
+    private String roles;
 
     @ManyToMany
-    private final List<Warehouse> warehouses;
+    private List<Warehouse> warehouses;
 }
