@@ -28,7 +28,7 @@ form {
     flex-direction: column;
 }
 
-input, .button-submit {
+input, .button-submit, li {
     font-size: 1rem;
     border: none;
     background-color: var(--second-color);
@@ -56,6 +56,56 @@ input[type="submit"], .button-submit {
 input[type="submit"]:hover, .button-submit:hover {
     background-color: var(--second-color-accent);
     cursor: pointer;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+
+.title {
+    color: var(--second-color-accent);
+    font-size: 4rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--main-bg-color);
+}
+
+.menu {
+    position: absolute;
+    min-width: 28em;
+    right: 0;
+    margin: 1em;
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+
+li {
+    color: var(--main-bg-color);
+    font-size: 1rem;
+    padding: .5em .8em;
+}
+
+li:hover, .menu-active {
+    cursor: pointer;
+    background-color: var(--second-color-accent);
+}
+
+.menu-log {
+    background-color: var(--first-color);
+}
+
+.menu-log:hover {
+    background-color: var(--first-color-accent);
 }
 
 /* Log In page */
@@ -113,4 +163,34 @@ input[type="submit"]:hover, .button-submit:hover {
     .hero-form {
         width: auto;
     }
+}
+
+/* Warehouses page */
+
+header {
+    margin: 5em 0 2em 0;
+}
+
+.home-wh {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.warehouses {
+    background-color: #d7d3b8;
+    width: 80vw;
+    height: 80vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.wh {
+    background-color: #606C38;
+    width: 20em;
+    height: 10em;
+    border-radius: 2em;
+    margin: 2em;
 }
