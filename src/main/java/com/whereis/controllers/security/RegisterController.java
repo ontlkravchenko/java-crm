@@ -17,6 +17,7 @@ public class RegisterController {
 
     @GetMapping("register")
     public String showRegistrationForm(Model model) {
+        model.addAttribute("error", "Username already exist");
         model.addAttribute("user", new User());
         return "security/register";
     }

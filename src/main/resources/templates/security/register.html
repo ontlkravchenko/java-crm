@@ -1,16 +1,28 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>java-crm</title>
+    <title>WhereIs</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-<form action="#" th:action="@{/register}" th:object="${user}" method="POST">
-    <input type="text" id="name" th:field="*{username}" th:value="${user.username}" placeholder="Yor Username" />
-    <input type="password" id="password" th:field="*{password}" th:value="${user.password}" placeholder="Your Password" />
-    <input type="submit" th:value="Register" />
-</form>
+<div class="hero-circle">
+    <h1>Warehouse Management <span>Made Easy</span></h1>
+</div>
+<div class="hero-form">
+    <form action="#" th:action="@{/register}" th:object="${user}" method="POST">
+        <div th:if="${error}">
+            <span th:text="${error}" />
+        </div>
+        <input type="text" id="name" th:field="*{username}" th:value="${user.username}"
+               placeholder="Yor Username" autofocus autocomplete="off" />
+        <input type="password" id="password" th:field="*{password}" th:value="${user.password}"
+               placeholder="Your Password" autofocus autocomplete="off" />
+        <input type="submit" value="Register" />
+        <a th:href="@{/login}" class="button-submit">Log In</a>
+    </form>
+</div>
 </body>
 </html>
+
+

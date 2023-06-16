@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --main-bg-color: #FEFAE0;
+    --first-color: #606C38;
+    --first-color-accent: #283618;
+    --second-color: #DDA15E;
+    --second-color-accent: #BC6C25;
+}
+
+*, html {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", sans-serif;
+}
+
+body {
+    background-color: var(--main-bg-color);
+    color: var(--main-bg-color);
+    display: flex;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+input, .button-submit {
+    font-size: 1rem;
+    border: none;
+    background-color: var(--second-color);
+    color: var(--second-color-accent);
+    padding: .7em 1.4em;
+    border-radius: 2em;
+    margin: .5em 0;
+    outline: none;
+    text-decoration: none;
+}
+
+input:focus {
+    color: var(--main-bg-color);
+    background-color: var(--second-color-accent);
+    cursor: pointer;
+}
+
+input[type="submit"], .button-submit {
+    font-size: .8rem;
+    padding: .4em 1.8em;
+    color: var(--main-bg-color);
+    background-color: var(--first-color);
+}
+
+input[type="submit"]:hover, .button-submit:hover {
+    background-color: var(--second-color-accent);
+    cursor: pointer;
+}
+
+/* Log In page */
+
+.alert {
+    color: var(--second-color-accent);
+}
+
+.alert-success {
+    color: var(--first-color);
+}
+
+.hero-circle {
+    position: relative;
+    background-color: var(--second-color-accent);
+    top: -20vh;
+    left: -10vw;
+    height: 50vw;
+    width: 50vw;
+    min-height: 500px;
+    min-width: 500px;
+    border-radius: 50%;
+}
+
+.hero-circle h1 {
+    font-size: 4vw;
+    width: 25vw;
+    position: relative;
+    right: -30%;
+    top: 50%;
+}
+
+.hero-circle span {
+    font-weight: 100;
+}
+
+.hero-form {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media screen and (max-width: 1100px) {
+    body {
+        flex-direction: column;
+    }
+
+    .hero-circle h1 {
+        font-size: 2rem;
+        width: 10rem;
+    }
+
+    .hero-form {
+        width: auto;
+    }
+}

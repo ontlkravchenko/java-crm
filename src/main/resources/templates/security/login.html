@@ -1,22 +1,27 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>java-crm</title>
+    <title>WhereIs</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-<form action="#" th:action="@{/login}" method="POST">
-    <div th:if="${param.error}">
-        Invalid username or password.
-    </div>
-    <div th:if="${param.logout}" class="alert alert-success">
-        You have been logged out.
-    </div>
-    <input type="text" name="username" id="username" placeholder="Username">
-    <input type="password" name="password" id="password" placeholder="Password">
-    <input type="submit" th:value="LogIn">
-</form>
+<div class="hero-circle">
+    <h1>Warehouse Management <span>Made Easy</span></h1>
+</div>
+<div class="hero-form">
+    <form action="#" th:action="@{/login}" method="POST" class="alert">
+        <div th:if="${param.error}">
+            Invalid username or password.
+        </div>
+        <div th:if="${param.logout}" class="alert alert-success">
+            You have been logged out.
+        </div>
+        <input type="text" name="username" id="username" placeholder="Username" autofocus autocomplete="off">
+        <input type="password" name="password" id="password" placeholder="Password" autocomplete="off">
+        <input type="submit" value="Log In">
+        <a th:href="@{/register}" class="button-submit">Register</a>
+    </form>
+</div>
 </body>
 </html>
