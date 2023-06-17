@@ -201,7 +201,6 @@ header {
 }
 
 .warehouses {
-    background-color: #d7d3b8;
     width: 80vw;
     height: 80vh;
     display: flex;
@@ -210,9 +209,22 @@ header {
 }
 
 .wh {
-    background-color: #606C38;
+    background-color: var(--first-color);
     width: 20em;
     height: 10em;
     border-radius: 2em;
     margin: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.wh:hover {
+    background-color: var(--first-color-accent);
+    cursor: pointer;
+}
+
+.wh h5 {
+    font-weight: lighter;
 }
