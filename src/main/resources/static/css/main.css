@@ -8,6 +8,7 @@
     --second-color-accent: #BC6C25;
 }
 
+
 *, html {
     box-sizing: border-box;
     margin: 0;
@@ -28,16 +29,28 @@ form {
     flex-direction: column;
 }
 
-input, .button-submit, .menu-item {
+input,
+input[type="text"],
+.button-submit,
+.menu-item,
+#wh-create-btn {
+    color: var(--second-color-accent);
     font-size: 1rem;
     border: none;
     background-color: var(--second-color);
-    color: var(--second-color-accent);
     padding: .7em 1.4em;
     border-radius: 2em;
     margin: .5em 0;
     outline: none;
     text-decoration: none;
+}
+
+input::placeholder {
+    color: var(--second-color-accent);
+}
+
+input:focus::placeholder {
+    color: var(--second-color);
 }
 
 input:focus {
@@ -193,11 +206,13 @@ header {
     margin: 5em 0 2em 0;
 }
 
-.home-wh {
+.home-wh, .page {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    width: 100vw;
+    height: 100vh;
 }
 
 .warehouses {
@@ -228,3 +243,14 @@ header {
 .wh h5 {
     font-weight: lighter;
 }
+
+#wh-create-btn {
+    color: var(--main-bg-color);
+    font-size: 1rem;
+    padding: .5em 1.3em;
+}
+
+#wh-create-btn:hover {
+    background-color: var(--second-color-accent);
+}
+
