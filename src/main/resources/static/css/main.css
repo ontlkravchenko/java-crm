@@ -28,7 +28,7 @@ form {
     flex-direction: column;
 }
 
-input, .button-submit, li {
+input, .button-submit, .menu-item {
     font-size: 1rem;
     border: none;
     background-color: var(--second-color);
@@ -75,6 +75,8 @@ a {
     color: var(--main-bg-color);
 }
 
+/* Menu */
+
 .menu {
     position: absolute;
     min-width: 28em;
@@ -89,13 +91,13 @@ ul {
     list-style: none;
 }
 
-li {
+.menu-item {
     color: var(--main-bg-color);
     font-size: 1rem;
     padding: .5em .8em;
 }
 
-li:hover, .menu-active {
+.menu-item:hover, .menu-active {
     cursor: pointer;
     background-color: var(--second-color-accent);
 }
@@ -163,6 +165,26 @@ li:hover, .menu-active {
     .hero-form {
         width: auto;
     }
+}
+
+/* Log out */
+
+.logout {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.logout h1 {
+    font-size: 5vw;
+}
+
+.logout .button-submit {
+    font-size: 1.5vw;
+    font-weight: bolder;
 }
 
 /* Warehouses page */
