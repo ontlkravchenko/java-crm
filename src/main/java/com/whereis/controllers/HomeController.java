@@ -21,15 +21,7 @@ public class HomeController {
 
     @GetMapping
     public String home(Model model) {
-        List<Warehouse> warehouses = new ArrayList<>();
-        Warehouse wh = new Warehouse();
-        wh.setName("first");
-        wh.setCapacity(50);
-        warehouses.add(wh);
-        wh = new Warehouse();
-        wh.setName("second");
-        wh.setCapacity(2);
-        warehouses.add(wh);
+        List<Warehouse> warehouses = warehouseService.findAll();
 
         model.addAttribute("warehouses", warehouses);
         return "home";

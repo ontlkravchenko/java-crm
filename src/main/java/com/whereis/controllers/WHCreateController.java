@@ -17,13 +17,14 @@ public class WHCreateController {
 
     @GetMapping("wh-create")
     public String showPage(Model model) {
-        model.addAttribute("wh", new Warehouse());
+        model.addAttribute("warehouse", new Warehouse());
         return "wh-create";
     }
 
     @PostMapping("wh-create")
     public String processForm(@ModelAttribute Warehouse warehouse) {
-        System.out.println(warehouse);
+
+        warehouseService.save(warehouse);
         return "wh-create";
     }
 }

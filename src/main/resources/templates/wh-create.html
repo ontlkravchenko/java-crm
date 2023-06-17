@@ -10,10 +10,10 @@
 <body>
 <div th:include="@{elem-menu}" />
 <div class="page">
-    <form action="#" th:action="@{/wh-create}" th:object="${wh}" method="POST">
-        <input type="text" th:field="*{name}" th:value="${wh.name}"
+    <form action="#" th:action="@{/wh-create}" th:object="${warehouse}" method="POST">
+        <input type="text" th:field="*{name}" th:value="${warehouse.name}"
                placeholder="Name" autofocus autocomplete="off">
-        <input type="number" th:field="*{capacity}" th:value="${wh.capacity}"
+        <input type="number" th:field="*{capacity}" th:value="${warehouse.capacity}"
                placeholder="Capacity" autocomplete="off">
         <input type="submit" value="Create">
     </form>
