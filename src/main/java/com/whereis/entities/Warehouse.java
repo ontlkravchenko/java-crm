@@ -4,11 +4,14 @@ import com.whereis.domain.Containable;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
+import java.util.List;
+
 @Data
-@Entity
+@Entity(name = "warehouses")
 @RequiredArgsConstructor
 public class Warehouse implements Containable {
     @Id
@@ -18,4 +21,15 @@ public class Warehouse implements Containable {
     private String name;
 
     private int capacity;
+
+    @ManyToMany(mappedBy = "warehouses")
+    private List<User> users;
+
+    public List<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(List<User> users) {
+        this.users = users;
+    }
 }

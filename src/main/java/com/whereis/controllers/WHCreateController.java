@@ -25,6 +25,6 @@ public class WHCreateController {
     public String processForm(@ModelAttribute Warehouse warehouse) {
 
         warehouseService.save(warehouse);
-        return "wh-create";
+        return "redirect:/";
     }
 }

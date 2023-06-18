@@ -31,5 +31,10 @@ public class User {
     private String roles;
 
     @ManyToMany
+    @JoinTable(
+            name = "user_warehouse",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "warehouse_id")
+    )
     private List<Warehouse> warehouses;
 }

@@ -12,7 +12,10 @@
         <h1 class="title">Warehouses</h1>
     </header>
     <a th:href="@{/wh-create}" id="wh-create-btn">Create</a>
-    <div class="warehouses">
+    <div th:if="${warehouses.isEmpty()}">
+        <h1 class="empty-title">You don't have warehouses yet.</h1>
+    </div>
+    <div th:if="${!warehouses.isEmpty()}" class="warehouses">
         <a th:each="wh : ${warehouses}" th:href="${wh.getName()}" class="wh">
             <h2 th:text="${wh.getName()}" />
             <h5>capacity: <span th:text="${wh.getCapacity()}" /></h5>

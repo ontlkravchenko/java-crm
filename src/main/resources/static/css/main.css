@@ -88,6 +88,12 @@ a {
     color: var(--main-bg-color);
 }
 
+.empty-title {
+    font-weight: lighter;
+    font-size: 2rem;
+    color: var(--second-color);
+}
+
 /* Menu */
 
 .menu {
