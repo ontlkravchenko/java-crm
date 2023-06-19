@@ -3,10 +3,24 @@
 <head>
     <title>WhereIs</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-    <div th:each="warehouse : ${warehouses}">
-        <span th:text="${warehouse.getName()} + ${warehouse.getCapacity()}" />
+<div th:include="@{elem-menu}" />
+<div class="home-wh">
+    <header>
+        <h1 class="title">Warehouses</h1>
+    </header>
+    <a th:href="@{/wh-create}" id="wh-create-btn">Create</a>
+    <div th:if="${warehouses.isEmpty()}">
+        <h1 class="empty-title">You don't have warehouses yet.</h1>
     </div>
+    <div th:if="${!warehouses.isEmpty()}" class="warehouses">
+        <a th:each="wh : ${warehouses}" th:href="${wh.getName()}" class="wh">
+            <h2 th:text="${wh.getName()}" />
+            <h5>capacity: <span th:text="${wh.getCapacity()}" /></h5>
+        </a>
+    </div>
+</div>
 </body>
 </html>

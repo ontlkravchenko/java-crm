@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --main-bg-color: #FEFAE0;
+    --first-color: #606C38;
+    --first-color-accent: #283618;
+    --second-color: #DDA15E;
+    --second-color-accent: #BC6C25;
+}
+
+
+*, html {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", sans-serif;
+}
+
+body {
+    background-color: var(--main-bg-color);
+    color: var(--main-bg-color);
+    display: flex;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+input,
+input[type="text"],
+.button-submit,
+.menu-item,
+#wh-create-btn {
+    color: var(--second-color-accent);
+    font-size: 1rem;
+    border: none;
+    background-color: var(--second-color);
+    padding: .7em 1.4em;
+    border-radius: 2em;
+    margin: .5em 0;
+    outline: none;
+    text-decoration: none;
+}
+
+input::placeholder {
+    color: var(--second-color-accent);
+}
+
+input:focus::placeholder {
+    color: var(--second-color);
+}
+
+input:focus {
+    color: var(--main-bg-color);
+    background-color: var(--second-color-accent);
+    cursor: pointer;
+}
+
+input[type="submit"], .button-submit {
+    font-size: .8rem;
+    padding: .4em 1.8em;
+    color: var(--main-bg-color);
+    background-color: var(--first-color);
+}
+
+input[type="submit"]:hover, .button-submit:hover {
+    background-color: var(--second-color-accent);
+    cursor: pointer;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+
+.title {
+    color: var(--second-color-accent);
+    font-size: 4rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--main-bg-color);
+}
+
+.empty-title {
+    font-weight: lighter;
+    font-size: 2rem;
+    color: var(--second-color);
+}
+
+/* Menu */
+
+.menu {
+    position: absolute;
+    min-width: 28em;
+    right: 0;
+    margin: 1em;
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+
+.menu-item {
+    color: var(--main-bg-color);
+    font-size: 1rem;
+    padding: .5em .8em;
+}
+
+.menu-item:hover, .menu-active {
+    cursor: pointer;
+    background-color: var(--second-color-accent);
+}
+
+.menu-log {
+    background-color: var(--first-color);
+}
+
+.menu-log:hover {
+    background-color: var(--first-color-accent);
+}
+
+/* Log In page */
+
+.alert {
+    color: var(--second-color-accent);
+}
+
+.alert-success {
+    color: var(--first-color);
+}
+
+.hero-circle {
+    position: relative;
+    background-color: var(--second-color-accent);
+    top: -20vh;
+    left: -10vw;
+    height: 50vw;
+    width: 50vw;
+    min-height: 500px;
+    min-width: 500px;
+    border-radius: 50%;
+}
+
+.hero-circle h1 {
+    font-size: 4vw;
+    width: 25vw;
+    position: relative;
+    right: -30%;
+    top: 50%;
+}
+
+.hero-circle span {
+    font-weight: 100;
+}
+
+.hero-form {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media screen and (max-width: 1100px) {
+    body {
+        flex-direction: column;
+    }
+
+    .hero-circle h1 {
+        font-size: 2rem;
+        width: 10rem;
+    }
+
+    .hero-form {
+        width: auto;
+    }
+}
+
+/* Log out */
+
+.logout {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.logout h1 {
+    font-size: 5vw;
+}
+
+.logout .button-submit {
+    font-size: 1.5vw;
+    font-weight: bolder;
+}
+
+/* Warehouses page */
+
+header {
+    margin: 5em 0 2em 0;
+}
+
+.home-wh, .page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+
+.warehouses {
+    width: 80vw;
+    height: 80vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.wh {
+    background-color: var(--first-color);
+    width: 20em;
+    height: 10em;
+    border-radius: 2em;
+    margin: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.wh:hover {
+    background-color: var(--first-color-accent);
+    cursor: pointer;
+}
+
+.wh h5 {
+    font-weight: lighter;
+}
+
+#wh-create-btn {
+    color: var(--main-bg-color);
+    font-size: 1rem;
+    padding: .5em 1.3em;
+}
+
+#wh-create-btn:hover {
+    background-color: var(--second-color-accent);
+}
+

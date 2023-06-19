@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>WhereIs</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+<div class="hero-circle">
+    <h1>Warehouse Management <span>Made Easy</span></h1>
+</div>
+<div class="hero-form">
+    <form action="#" th:action="@{/register}" th:object="${user}" method="POST">
+        <div th:if="${error}">
+            <span th:text="${error}" />
+        </div>
+        <input type="text" id="name" th:field="*{username}" th:value="${user.username}"
+               placeholder="Yor Username" autofocus autocomplete="off" />
+        <input type="password" id="password" th:field="*{password}" th:value="${user.password}"
+               placeholder="Your Password" autofocus autocomplete="off" />
+        <input type="submit" value="Register" />
+        <a th:href="@{/login}" class="button-submit">Log In</a>
+    </form>
+</div>
+</body>
+</html>
+
+
