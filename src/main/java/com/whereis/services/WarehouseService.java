@@ -1,13 +1,11 @@
 package com.whereis.services;
 
-import com.whereis.entities.User;
 import com.whereis.entities.Warehouse;
 import com.whereis.repositories.WarehouseRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Optional;
 
 @Service
 public class WarehouseService {
@@ -17,19 +15,19 @@ public class WarehouseService {
      */
 
     @Autowired
-    private UserService userService;
+    UserService userService;
 
     @Autowired
-    private WarehouseRepo warehouseRepo;
-
-    public List<Warehouse> findAllForCurrentUser() {
-//        return warehouseRepo.findAll();
-        User user = userService.getAuthorizedUser();
-        return user.getWarehouses();
-    }
+    WarehouseRepo warehouseRepo;
 
     public Warehouse saveWarehouse(Warehouse warehouse) {
         Warehouse WHWithCurrentUser = userService.addWarehouseToCurrentUser(warehouse);
         return warehouseRepo.save(WHWithCurrentUser);
+    }
+
+    public Warehouse findById(Long id) {
+        Optional<Warehouse> optionalWarehouse = warehouseRepo.findById(id);
+
+        return optionalWarehouse.orElse(null);
     }
 }

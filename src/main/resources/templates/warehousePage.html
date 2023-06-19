@@ -9,6 +9,15 @@
 </head>
 <body>
 <div th:include="@{elem-menu}" />
-<span th:text="${id}" class="title" />
+<div class="item-page page">
+    <div class="description">
+        <h5>
+            Name: <span th:text="${warehouse.getName()}" />
+        </h5>
+        <h5>
+            Capacity: <span th:text="${warehouse.getCapacity()}" />
+        </h5>
+    </div>
+</div>
 </body>
 </html>

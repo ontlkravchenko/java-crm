@@ -53,11 +53,7 @@ public class UserService {
         // Find user by username in DB
         Optional<User> userOptional = userRepo.findByUsername(username);
 
-        if (userOptional.isEmpty()) return null;
-
-        User user = userOptional.get();
-
-        return user;
+        return userOptional.orElse(null);
     }
 
     public Warehouse addWarehouseToCurrentUser(Warehouse warehouse) {
