@@ -29,17 +29,6 @@ public class WarehouseService {
     }
 
     public Warehouse saveWarehouse(Warehouse warehouse) {
-        // Assign default warehouses to the current user
-        User user = userService.getAuthorizedUser();
-        List<Warehouse> defaultWarehouses = new ArrayList<>();
-        user.setWarehouses(defaultWarehouses);
-
-        // Save the warehouse
-        Warehouse savedWarehouse = warehouseRepo.save(warehouse);
-
-        // Update the user's warehouses
-        userService.saveUser(user);
-
-        return savedWarehouse;
+        return warehouseRepo.save(warehouse);
     }
 }
