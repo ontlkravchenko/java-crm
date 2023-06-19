@@ -8,6 +8,7 @@
     --second-color-accent: #BC6C25;
 }
 
+/* General styling */
 
 *, html {
     box-sizing: border-box;
@@ -29,9 +30,15 @@ form {
     flex-direction: column;
 }
 
+a {
+    text-decoration: none;
+    color: var(--main-bg-color);
+}
+
+
 input,
 input[type="text"],
-.button-submit,
+.button,
 .menu-item,
 #wh-create-btn {
     color: var(--second-color-accent);
@@ -59,14 +66,18 @@ input:focus {
     cursor: pointer;
 }
 
-input[type="submit"], .button-submit {
+input[type="submit"], .button {
     font-size: .8rem;
     padding: .4em 1.8em;
     color: var(--main-bg-color);
     background-color: var(--first-color);
 }
 
-input[type="submit"]:hover, .button-submit:hover {
+.inversed-button {
+    background-color: var(--second-color);
+}
+
+input[type="submit"]:hover, .button:hover {
     background-color: var(--second-color-accent);
     cursor: pointer;
 }
@@ -83,21 +94,26 @@ header {
     font-size: 4rem;
 }
 
-a {
+.btn {
     text-decoration: none;
     color: var(--main-bg-color);
+    background-color: var(--second-color);
+    padding: .35em 1.4em;
+    font-size: .8rem;
+    margin: 2em;
+    border-radius: 2em;
 }
 
-.empty-title {
-    font-weight: lighter;
-    font-size: 2rem;
-    color: var(--second-color);
+.btn:active, .btn:hover {
+    background-color: var(--second-color-accent);
+    cursor: pointer;
 }
 
 .description h5 {
     font-weight: bolder;
     color: var(--second-color-accent);
     font-size: 1.2rem;
+    margin-bottom: .5em;
 }
 
 .description span {
@@ -106,10 +122,19 @@ a {
     font-size: 1rem;
 }
 
-.item-page {
-    justify-content: flex-end;
-    align-items: flex-start;
-    text-align: left;
+.page {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    padding: 10vh 10vw;
+    height: 100vh;
+    width: 100vw;
 }
 
 /* Menu */
@@ -219,7 +244,7 @@ ul {
     font-size: 5vw;
 }
 
-.logout .button-submit {
+.logout .button {
     font-size: 1.5vw;
     font-weight: bolder;
 }
@@ -228,15 +253,6 @@ ul {
 
 header {
     margin: 5em 0 2em 0;
-}
-
-.home-wh, .page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100vw;
-    height: 100vh;
 }
 
 .warehouses {
@@ -257,6 +273,12 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.empty-title {
+    font-weight: lighter;
+    font-size: 2rem;
+    color: var(--second-color);
 }
 
 .wh:hover {

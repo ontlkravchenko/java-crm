@@ -9,14 +9,18 @@
 </head>
 <body>
 <div th:include="@{elem-menu}" />
-<div class="item-page page">
-    <div class="description">
-        <h5>
-            Name: <span th:text="${warehouse.getName()}" />
-        </h5>
-        <h5>
-            Capacity: <span th:text="${warehouse.getCapacity()}" />
-        </h5>
+<div class="page">
+    <div class="container">
+        <div class="description">
+            <h5>
+                Name: <span th:text="${warehouse.getName()}" />
+            </h5>
+            <h5>
+                Capacity: <span th:text="${warehouse.getCapacity()}" />
+            </h5>
+            <a th:href="@{'products-' + ${warehouse.getId()}}" class="button inversed-button">Products</a>
+            <a th:href="@{'edit-' + ${warehouse.getId()}}" class="button">Edit</a>
+        </div>
     </div>
 </div>
 </body>
