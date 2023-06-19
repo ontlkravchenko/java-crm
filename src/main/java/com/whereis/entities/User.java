@@ -36,16 +36,4 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "warehouse_id")
     )
     private List<Warehouse> warehouses;
-
-    public void addWarehouse(Warehouse warehouse) {
-        if (warehouses == null) warehouses = new ArrayList<>();
-
-        warehouses.add(warehouse);
-
-        if (warehouse.getUsers() == null) {
-            warehouse.setUsers(new ArrayList<>());
-        }
-
-        warehouse.getUsers().add(this);
-    }
 }

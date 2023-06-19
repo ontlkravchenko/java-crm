@@ -1,6 +1,7 @@
 package com.whereis.services;
 
 import com.whereis.entities.User;
+import com.whereis.entities.Warehouse;
 import com.whereis.repositories.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
@@ -10,6 +11,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Optional;
 
 @Service
@@ -56,5 +58,23 @@ public class UserService {
         User user = userOptional.get();
 
         return user;
+    }
+
+    public Warehouse addWarehouseToCurrentUser(Warehouse warehouse) {
+        User user = getAuthorizedUser();
+
+        if (warehouse.getUsers() == null) {
+            warehouse.setUsers(new ArrayList<>());
+        }
+
+        warehouse.getUsers().add(user);
+
+        if (user.getWarehouses() == null) user.setWarehouses(new ArrayList<>());
+
+        user.getWarehouses().add(warehouse);
+
+        userRepo.save(user);
+
+        return warehouse;
     }
 }

@@ -19,9 +19,6 @@ public class WHCreateController {
     @Autowired
     WarehouseService warehouseService;
 
-    @Autowired
-    UserService userService;
-
     @GetMapping("wh-create")
     public String showPage(Model model) {
         model.addAttribute("warehouse", new Warehouse());
@@ -31,14 +28,8 @@ public class WHCreateController {
     @PostMapping("wh-create")
     public String processForm(@ModelAttribute Warehouse warehouse) {
 
-        // Get current user from DB
-        User user = userService.getAuthorizedUser();
-
-        // Add current user to warehouse's users
-        user.addWarehouse(warehouse);
-
         warehouseService.saveWarehouse(warehouse);
-        userService.saveUser(user);
+
         return "redirect:/";
     }
 }

@@ -29,6 +29,7 @@ public class WarehouseService {
     }
 
     public Warehouse saveWarehouse(Warehouse warehouse) {
-        return warehouseRepo.save(warehouse);
+        Warehouse WHWithCurrentUser = userService.addWarehouseToCurrentUser(warehouse);
+        return warehouseRepo.save(WHWithCurrentUser);
     }
 }
