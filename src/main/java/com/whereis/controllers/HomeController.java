@@ -18,7 +18,7 @@ public class HomeController {
     UserService userService;
 
     @GetMapping
-    public String home(Model model) {
+    public String showPage(Model model) {
         List<Warehouse> warehouses = userService.getAuthorizedUser().getWarehouses();
 
         model.addAttribute("warehouses", warehouses);
