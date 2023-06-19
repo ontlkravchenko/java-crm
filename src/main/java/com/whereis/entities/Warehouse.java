@@ -22,14 +22,6 @@ public class Warehouse implements Containable {
 
     private int capacity;
 
-    @ManyToMany(mappedBy = "warehouses")
-    private List<User> users;
-
-    public List<User> getUsers() {
-        return users;
-    }
-
-    public void setUsers(List<User> users) {
-        this.users = users;
-    }
+    @ManyToMany(mappedBy = "userWarehouses")
+    private List<User> warehouseUsers;
 }

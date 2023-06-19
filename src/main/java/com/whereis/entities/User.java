@@ -1,12 +1,11 @@
 package com.whereis.entities;
 
 import jakarta.persistence.*;
-import lombok.AccessLevel;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.hibernate.validator.constraints.Length;
 
+import java.util.ArrayList;
 import java.util.List;
 
 // Lombok
@@ -30,11 +29,17 @@ public class User {
 
     private String roles;
 
-    @ManyToMany
-    @JoinTable(
-            name = "user_warehouse",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "warehouse_id")
-    )
-    private List<Warehouse> warehouses;
+//    @JoinTable(
+//            name = "warehouse_users",
+//            joinColumns = @JoinColumn(name = "user_id"),
+//            inverseJoinColumns = @JoinColumn(name = "warehouse_id")
+//    )
+    @ManyToMany(mappedBy = "warehouseUsers")
+    private List<Warehouse> userWarehouses;
+
+    public void addWarehouse(Warehouse warehouse) {
+        if (userWarehouses == null) userWarehouses = new ArrayList<>();
+
+        userWarehouses.add(warehouse);
+    }
 }
