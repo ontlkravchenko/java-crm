@@ -2,7 +2,6 @@ package com.whereis.controllers;
 
 import com.whereis.entities.Warehouse;
 import com.whereis.services.UserService;
-import com.whereis.services.WarehouseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,7 +19,7 @@ public class HomeController {
 
     @GetMapping
     public String home(Model model) {
-        List<Warehouse> warehouses = userService.getAuthorizedUser().getUserWarehouses();
+        List<Warehouse> warehouses = userService.getAuthorizedUser().getWarehouses();
 
         model.addAttribute("warehouses", warehouses);
         return "home";

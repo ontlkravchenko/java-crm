@@ -35,13 +35,9 @@ public class WHCreateController {
         User user = userService.getAuthorizedUser();
 
         // Add current user to warehouse's users
-        warehouse.setWarehouseUsers(new ArrayList<>());
-        warehouse.getWarehouseUsers()
-                .add(user);
-
         user.addWarehouse(warehouse);
 
-        warehouseService.save(warehouse);
+        warehouseService.saveWarehouse(warehouse);
         userService.saveUser(user);
         return "redirect:/";
     }

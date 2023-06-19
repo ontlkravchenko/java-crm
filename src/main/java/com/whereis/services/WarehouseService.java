@@ -25,14 +25,14 @@ public class WarehouseService {
     public List<Warehouse> findAllForCurrentUser() {
 //        return warehouseRepo.findAll();
         User user = userService.getAuthorizedUser();
-        return user.getUserWarehouses();
+        return user.getWarehouses();
     }
 
-    public Warehouse save(Warehouse warehouse) {
+    public Warehouse saveWarehouse(Warehouse warehouse) {
         // Assign default warehouses to the current user
         User user = userService.getAuthorizedUser();
         List<Warehouse> defaultWarehouses = new ArrayList<>();
-        user.setUserWarehouses(defaultWarehouses);
+        user.setWarehouses(defaultWarehouses);
 
         // Save the warehouse
         Warehouse savedWarehouse = warehouseRepo.save(warehouse);
