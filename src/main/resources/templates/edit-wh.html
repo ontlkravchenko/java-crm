@@ -12,6 +12,7 @@
 <div class="page">
     <div class="container">
         <form action="#" th:action="@{/edit-wh}" th:object="${warehouse}" method="POST">
+            <input type="hidden" th:field="${warehouse.id}">
             <label for="name">Name</label>
             <input type="text" th:field="*{name}" th:value="${warehouse.name}" autofocus autocomplete="off">
             <label for="capacity">Capacity</label>

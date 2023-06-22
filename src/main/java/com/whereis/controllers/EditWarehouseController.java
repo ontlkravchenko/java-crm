@@ -30,7 +30,8 @@ public class EditWarehouseController {
     public String processForm(@ModelAttribute Warehouse warehouse) {
         if (warehouse.getId() == null) return "redirect:/";
 
-        System.out.println(warehouse);
+        warehouseService.saveChangesInWarehouse(warehouse);
+
         return "redirect:/warehouse-" + warehouse.getId();
     }
 }

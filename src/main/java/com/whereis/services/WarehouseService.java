@@ -20,9 +20,13 @@ public class WarehouseService {
     @Autowired
     WarehouseRepo warehouseRepo;
 
-    public Warehouse saveWarehouse(Warehouse warehouse) {
+    public Warehouse createWarehouse(Warehouse warehouse) {
         Warehouse WHWithCurrentUser = userService.addWarehouseToCurrentUser(warehouse);
         return warehouseRepo.save(WHWithCurrentUser);
+    }
+
+    public boolean saveChangesInWarehouse(Warehouse warehouse) {
+        return warehouseRepo.save(warehouse) != null;
     }
 
     public Warehouse findById(Long id) {
