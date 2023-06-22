@@ -30,6 +30,12 @@ form {
     flex-direction: column;
 }
 
+label {
+    color: var(--second-color);
+    font-weight: lighter;
+    text-align: left;
+}
+
 a {
     text-decoration: none;
     color: var(--main-bg-color);

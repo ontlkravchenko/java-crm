@@ -16,8 +16,8 @@ public class WarehouseController {
 
     @GetMapping("warehouse-{id}")
     public String showPage(@PathVariable Long id, Model model) {
-
         Warehouse warehouse = warehouseService.findById(id);
+        if (warehouse == null) return "redirect:/";
 
         model.addAttribute("warehouse", warehouse);
         return "warehousePage";

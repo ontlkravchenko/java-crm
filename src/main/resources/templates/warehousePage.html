@@ -19,7 +19,7 @@
                 Capacity: <span th:text="${warehouse.getCapacity()}" />
             </h5>
             <a th:href="@{'products-' + ${warehouse.getId()}}" class="button inversed-button">Products</a>
-            <a th:href="@{'edit-' + ${warehouse.getId()}}" class="button">Edit</a>
+            <a th:href="@{'edit-wh-' + ${warehouse.getId()}}" class="button">Edit</a>
         </div>
     </div>
 </div>
