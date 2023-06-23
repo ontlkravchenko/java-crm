@@ -41,6 +41,18 @@ a {
     color: var(--main-bg-color);
 }
 
+textarea {
+    border: none;
+    background-color: var(--second-color);
+    color: var(--main-bg-color);
+    border-radius: 2em;
+    outline: none;
+    padding: 1.5em;
+}
+
+textarea:active {
+    background-color: var(--second-color-accent);
+}
 
 input,
 input[type="text"],

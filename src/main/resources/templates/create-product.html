@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>java-crm</title>
+</head>
+<body>
+<div th:include="@{elem-menu}" />
+<div class="page">
+    <form action="#" th:action="@{/warehouse-} + ${whId} + '/create-product'" th:object="${product}" method="POST">
+        <input type="text" th:field="*{name}" th:value="${product.name}"
+               placeholder="Name" autofocus autocomplete="off" />
+        <textarea name="description" id="description" th:value="${product.description}" cols="32" rows="15">Description max 255 symbols.</textarea>
+        <input type="number" step="0.001" th:field="*{weightKG}" th:value="${product.weightKG}"
+               placeholder="Weight in KG" autofocus autocomplete="off" />
+        <input type="submit" value="Create">
+    </form>
+</div>
+</body>
+</html>

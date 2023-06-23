@@ -13,13 +13,13 @@
     <div class="container">
         <div class="description">
             <h5>
-                Name: <span th:text="${warehouse.getName()}" />
+                Name: <span th:text="${product.getName()}" />
             </h5>
             <h5>
-                Capacity: <span th:text="${warehouse.getCapacity()}" />
+                Capacity: <span th:text="${product.getDescription()}" />
             </h5>
-            <a th:href="@{'products-' + ${warehouse.getId()}}" class="button inversed-button">Products</a>
-            <a th:href="@{'edit-wh-' + ${warehouse.getId()}}" class="button">Edit</a>
+<!--            TODO edit product page-->
+            <a th:href="@{'edit-wh-' + ${product.getId()}}" class="button">Edit</a>
         </div>
     </div>
 </div>

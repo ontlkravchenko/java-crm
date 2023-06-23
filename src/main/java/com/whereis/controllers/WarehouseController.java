@@ -20,6 +20,6 @@ public class WarehouseController {
         if (warehouse == null) return "redirect:/";
 
         model.addAttribute("warehouse", warehouse);
-        return "warehousePage";
+        return "page-warehouse";
     }
 }

@@ -1,10 +1,7 @@
 package com.whereis.entities;
 
 import com.whereis.domain.Containable;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
@@ -24,4 +21,7 @@ public class Warehouse implements Containable {
 
     @ManyToMany(mappedBy = "warehouses")
     private List<User> users;
+
+    @OneToMany(mappedBy = "warehouse")
+    private List<Product> products;
 }

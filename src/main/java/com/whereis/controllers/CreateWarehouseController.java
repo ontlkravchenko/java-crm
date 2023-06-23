@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
-public class WHCreateController {
+public class CreateWarehouseController {
 
     @Autowired
     WarehouseService warehouseService;
@@ -18,7 +18,7 @@ public class WHCreateController {
     @GetMapping("wh-create")
     public String showPage(Model model) {
         model.addAttribute("warehouse", new Warehouse());
-        return "wh-create";
+        return "create-wh";
     }
 
     @PostMapping("wh-create")

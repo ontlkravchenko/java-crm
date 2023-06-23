@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>java-crm</title>
+</head>
+<body>
+<div th:include="@{elem-menu}" />
+<div class="page">
+    <div class="container">
+        <div class="description">
+            <h5>
+                Name: <span th:text="${warehouse.getName()}" />
+            </h5>
+            <h5>
+                Capacity: <span th:text="${warehouse.getCapacity()}" />
+            </h5>
+            <a th:href="@{'warehouse-' + ${warehouse.getId()} + '/products'}" class="button inversed-button">Products</a>
+            <a th:href="@{'edit-wh-' + ${warehouse.getId()}}" class="button">Edit</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
