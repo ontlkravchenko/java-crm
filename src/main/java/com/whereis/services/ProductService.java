@@ -17,7 +17,8 @@ public class ProductService {
     public boolean createProduct(Product product) {
         if (product == null) return false;
 
-        return productRepo.save(product) != null;
+        productRepo.save(product);
+        return true;
     }
 
     public Product saveChangesToProduct(Product product) {

@@ -43,8 +43,9 @@ public class CreateProductController {
         Warehouse wh = warehouseService.findById(whId);
         if (wh == null) return "redirect:/";
 
+        product.setWarehouse(wh);
         productService.createProduct(product);
 
-        return "redirect:warehouse-" + whId + "/products";
+        return "redirect:products";
     }
 }
