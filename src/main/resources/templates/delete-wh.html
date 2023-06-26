@@ -8,13 +8,12 @@
     <title>java-crm</title>
 </head>
 <body>
-<div class="confirmation">
-    <form action="#" th:action="@{/logout}" method="post">
-        <h1 class="title">Are you sure you want to log out?</h1>
+<div class="confirmation" th:if="${warehouse != null}">
+    <form action="#" th:action="@{'/delete-wh-' + ${warehouse.getId()}}" method="post">
+        <h2>Are you sure you want to <br><span th:text="'delete ' + ${warehouse.getName()}" /></h2>
         <input type="submit" class="button" value="Yes">
         <a href="/" class="button">No</a>
     </form>
 </div>
-
 </body>
 </html>

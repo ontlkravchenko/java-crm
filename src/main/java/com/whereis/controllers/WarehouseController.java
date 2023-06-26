@@ -90,6 +90,20 @@ public class WarehouseController {
     }
 
     //  Delete
-    // TODO Delete warehouse
+    @GetMapping("delete-wh-{whId}")
+    public String showDeleteWHPage(@PathVariable Long whId, Model model) {
+        Warehouse warehouse = warehouseService.findById(whId);
+        if (warehouse == null) return "redirect:/";
+
+        model.addAttribute("warehouse", warehouse);
+        return "delete-wh";
+    }
+
+    @PostMapping("delete-wh-{whId}")
+    public String processDeleteWHForm(@PathVariable Long whId) {
+        warehouseService.deleteByID(whId);
+
+        return "redirect:/";
+    }
 
 }

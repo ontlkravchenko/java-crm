@@ -29,7 +29,7 @@ public class User {
 
     private String roles;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.REMOVE)
     @JoinTable(
             name = "user_warehouses",
             joinColumns = @JoinColumn(name = "user_id"),

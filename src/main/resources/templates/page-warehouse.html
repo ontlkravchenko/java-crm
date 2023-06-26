@@ -20,6 +20,7 @@
             </h5>
             <a th:href="@{'warehouse-' + ${warehouse.getId()} + '/products'}" class="button inversed-button">Products</a>
             <a th:href="@{'edit-wh-' + ${warehouse.getId()}}" class="button">Edit</a>
+            <a th:href="@{'delete-wh-' + ${warehouse.getId()}}" class="button delete-button">Delete</a>
         </div>
     </div>
 </div>

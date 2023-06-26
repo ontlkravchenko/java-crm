@@ -1,6 +1,7 @@
 package com.whereis.services;
 
 import com.whereis.entities.Product;
+import com.whereis.entities.User;
 import com.whereis.entities.Warehouse;
 import com.whereis.repositories.WarehouseRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,5 +43,21 @@ public class WarehouseService {
 
     public List<Product> getProductsById(Long whId) {
         return productService.findAllByWarehouseId(whId);
+    }
+
+    public void deleteByID(Long whId) {
+        Optional<Warehouse> optionalWarehouse = warehouseRepo.findById(whId);
+
+        if (optionalWarehouse.isEmpty()) {
+            return;
+        }
+
+        Warehouse wh = optionalWarehouse.get();
+
+        for (User u : wh.getUsers()) {
+            u.getWarehouses().remove(wh);
+        }
+
+        warehouseRepo.delete(wh);
     }
 }
