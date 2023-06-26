@@ -28,12 +28,8 @@ public class ProductService {
     }
 
     public Product findById(Long productId, Long whId) {
-        Optional<Product> optionalProduct = productRepo.findById(productId);
-        Product product = optionalProduct.orElse(null);
 
-        if (product == null || product.getWarehouse().getId() != whId) return null;
-
-        return product;
+        return productRepo.findByIdAndWarehouseId(productId, whId);
     }
 
     public List<Product> findAllByWarehouseId(Long id) {

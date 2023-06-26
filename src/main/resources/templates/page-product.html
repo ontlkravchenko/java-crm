@@ -11,14 +11,13 @@
 <div th:include="@{elem-menu}" />
 <div class="page">
     <div class="container">
-        <div class="description">
+        <div th:if="${product != null}" class="description">
             <h5>
                 Name: <span th:text="${product.getName()}" />
             </h5>
             <h5>
                 Capacity: <span th:text="${product.getDescription()}" />
             </h5>
-<!--            TODO edit product page-->
             <a th:href="@{'edit-wh-' + ${product.getId()}}" class="button">Edit</a>
         </div>
     </div>
