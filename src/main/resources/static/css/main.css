@@ -48,6 +48,7 @@ textarea {
     border-radius: 2em;
     outline: none;
     padding: 1.5em;
+    font-size: .7rem;
 }
 
 textarea:active {

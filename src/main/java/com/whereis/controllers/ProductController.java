@@ -67,4 +67,29 @@ public class ProductController {
 
         return "redirect:products";
     }
+
+    //  Edit
+    @GetMapping("warehouse-{whId}/edit-product-{productId}")
+    public String showEditProductPage(
+            @PathVariable Long whId,
+            @PathVariable Long productId,
+            Model model
+    ) {
+        Product product = productService.findById(productId, whId);
+        if (product == null) return "redirect:/";
+
+        model.addAttribute("product", product);
+
+        return "edit-product";
+    }
+
+    @PostMapping("edit-product")
+    public String processEditProductForm(@ModelAttribute Product product) {
+        Warehouse wh = productService.findById(product.getId()).getWarehouse();
+        final Long WH_ID = wh.getId();
+        product.setWarehouse(wh);
+
+        productService.saveChangesToProduct(product);
+        return "redirect:/warehouse-" + WH_ID + "/product-" + product.getId();
+    }
 }

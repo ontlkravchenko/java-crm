@@ -35,4 +35,8 @@ public class ProductService {
     public List<Product> findAllByWarehouseId(Long id) {
         return productRepo.findAllByWarehouseId(id);
     }
+
+    public Product findById(Long id) {
+        return productRepo.findById(id).orElse(null);
+    }
 }

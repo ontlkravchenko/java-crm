@@ -16,9 +16,12 @@
                 Name: <span th:text="${product.getName()}" />
             </h5>
             <h5>
+                Weight: <span th:text="${product.getWeightKG()} + ' kg'" />
+            </h5>
+            <h5>
                 Capacity: <span th:text="${product.getDescription()}" />
             </h5>
-            <a th:href="@{'edit-wh-' + ${product.getId()}}" class="button">Edit</a>
+            <a th:href="@{'edit-product-' + ${product.getId()}}" class="button">Edit</a>
         </div>
     </div>
 </div>
