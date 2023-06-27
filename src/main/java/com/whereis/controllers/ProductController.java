@@ -31,7 +31,7 @@ public class ProductController {
 
         model.addAttribute("product", product);
 
-        return "page-product";
+        return "product/page-product";
     }
 
     /*
@@ -50,7 +50,7 @@ public class ProductController {
         model.addAttribute("product", new Product());
         model.addAttribute("whId", whId);
 
-        return "create-product";
+        return "product/create-product";
     }
 
     @PostMapping("warehouse-{whId}/create-product")
@@ -78,7 +78,7 @@ public class ProductController {
 
         model.addAttribute("product", product);
 
-        return "edit-product";
+        return "product/edit-product";
     }
 
     @PostMapping("/edit-product")
@@ -98,7 +98,7 @@ public class ProductController {
         if (p == null) return "redirect:/";
 
         model.addAttribute("product", p);
-        return "delete-product";
+        return "product/delete-product";
     }
 
     @PostMapping("delete-product-{productId}")

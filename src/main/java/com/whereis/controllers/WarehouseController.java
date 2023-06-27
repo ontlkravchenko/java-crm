@@ -28,7 +28,7 @@ public class WarehouseController {
         List<Warehouse> warehouses = userService.getAuthorizedUser().getWarehouses();
 
         model.addAttribute("warehouses", warehouses);
-        return "home";
+        return "warehouse/home";
     }
 
     @GetMapping("warehouse-{id}")
@@ -37,7 +37,7 @@ public class WarehouseController {
         if (warehouse == null) return "redirect:/";
 
         model.addAttribute("warehouse", warehouse);
-        return "page-warehouse";
+        return "warehouse/page-warehouse";
     }
 
     @GetMapping("warehouse-{whId}/products")
@@ -47,7 +47,7 @@ public class WarehouseController {
         model.addAttribute("products", products);
         model.addAttribute("whId", whId);
 
-        return "page-warehouseProducts";
+        return "warehouse/page-warehouseProducts";
     }
 
     /*
@@ -58,7 +58,7 @@ public class WarehouseController {
     @GetMapping("wh-create")
     public String showPageWHCreate(Model model) {
         model.addAttribute("warehouse", new Warehouse());
-        return "create-wh";
+        return "warehouse/create-wh";
     }
 
     @PostMapping("wh-create")
@@ -77,7 +77,7 @@ public class WarehouseController {
 
         model.addAttribute("warehouse", userWh);
 
-        return "edit-wh";
+        return "warehouse/edit-wh";
     }
 
     @PostMapping("edit-wh")
@@ -96,7 +96,7 @@ public class WarehouseController {
         if (warehouse == null) return "redirect:/";
 
         model.addAttribute("warehouse", warehouse);
-        return "delete-wh";
+        return "warehouse/delete-wh";
     }
 
     @PostMapping("delete-wh-{whId}")

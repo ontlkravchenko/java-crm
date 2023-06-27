@@ -8,11 +8,11 @@
     <title>java-crm</title>
 </head>
 <body>
-<div class="confirmation" th:if="${warehouse != null}">
-    <form action="#" th:action="@{'/delete-wh-' + ${warehouse.getId()}}" method="post">
-        <h2>Are you sure you want to <br><span th:text="'delete ' + ${warehouse.getName()}" /></h2>
+<div class="confirmation" th:if="${product != null}">
+    <form action="#" th:action="@{'/delete-product-' + ${product.getId()}}" method="post">
+        <h2>Are you sure you want to <br><span th:text="'delete ' + ${product.getName()}" /></h2>
         <input type="submit" class="button" value="Yes">
-        <a href="/" class="button">No</a>
+        <a href="/static" class="button">No</a>
     </form>
 </div>
 </body>
