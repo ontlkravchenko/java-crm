@@ -21,7 +21,8 @@
             <h5>
                 Capacity: <span th:text="${product.getDescription()}" />
             </h5>
-            <a th:href="@{'edit-product-' + ${product.getId()}}" class="button">Edit</a>
+            <a th:href="@{'/edit-product-' + ${product.getId()}}" class="button">Edit</a>
+            <a th:href="@{'/delete-product-' + ${product.getId()}}" class="button delete-button">Delete</a>
         </div>
     </div>
 </div>

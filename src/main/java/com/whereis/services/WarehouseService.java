@@ -26,7 +26,8 @@ public class WarehouseService {
     @Autowired
     ProductService productService;
 
-    public Warehouse createWarehouse(Warehouse warehouse) {
+    public Warehouse createWarehouseForCurrentUser(Warehouse warehouse) {
+        Warehouse savedRepo = warehouseRepo.save(warehouse);
         Warehouse WHWithCurrentUser = userService.addWarehouseToCurrentUser(warehouse);
         return warehouseRepo.save(WHWithCurrentUser);
     }

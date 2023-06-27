@@ -21,14 +21,13 @@ public class ProductController {
     @Autowired
     WarehouseService warehouseService;
 
-    @GetMapping("warehouse-{whId}/product-{productId}")
+    @GetMapping("/warehouse-{whId}/product-{productId}")
     public String showProductPage(
             @PathVariable Long whId,
             @PathVariable Long productId,
             Model model
     ) {
-        Product product = productService.findById(productId, whId);
-//        if (product == null) return "redirect:/";
+        Product product = productService.findById(productId);
 
         model.addAttribute("product", product);
 
@@ -69,13 +68,12 @@ public class ProductController {
     }
 
     //  Edit
-    @GetMapping("warehouse-{whId}/edit-product-{productId}")
+    @GetMapping("/edit-product-{productId}")
     public String showEditProductPage(
-            @PathVariable Long whId,
             @PathVariable Long productId,
             Model model
     ) {
-        Product product = productService.findById(productId, whId);
+        Product product = productService.findById(productId);
         if (product == null) return "redirect:/";
 
         model.addAttribute("product", product);
@@ -83,13 +81,31 @@ public class ProductController {
         return "edit-product";
     }
 
-    @PostMapping("edit-product")
+    @PostMapping("/edit-product")
     public String processEditProductForm(@ModelAttribute Product product) {
-        Warehouse wh = productService.findById(product.getId()).getWarehouse();
+        Warehouse wh = productService.getWarehouseFromId(product.getId());
         final Long WH_ID = wh.getId();
         product.setWarehouse(wh);
 
         productService.saveChangesToProduct(product);
         return "redirect:/warehouse-" + WH_ID + "/product-" + product.getId();
+    }
+
+    //  Delete
+    @GetMapping("delete-product-{productId}")
+    public String showDeleteProductPage(@PathVariable Long productId, Model model) {
+        Product p = productService.findById(productId);
+        if (p == null) return "redirect:/";
+
+        model.addAttribute("product", p);
+        return "delete-product";
+    }
+
+    @PostMapping("delete-product-{productId}")
+    public String processDeleteProductForm(@PathVariable Long productId) {
+        Warehouse wh = productService.getWarehouseFromId(productId);
+        productService.deleteById(productId);
+
+        return "redirect:/";
     }
 }

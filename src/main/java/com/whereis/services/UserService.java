@@ -73,4 +73,12 @@ public class UserService {
 
         return warehouse;
     }
+
+    public User findByUsername(String username) {
+        return userRepo.findByUsername(username).orElse(null);
+    }
+
+    public void deleteUser(User u) {
+        userRepo.delete(u);
+    }
 }

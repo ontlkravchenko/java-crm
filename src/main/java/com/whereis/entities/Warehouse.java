@@ -22,6 +22,6 @@ public class Warehouse implements Containable {
     @ManyToMany(mappedBy = "warehouses")
     private List<User> users;
 
-    @OneToMany(mappedBy = "warehouse", cascade = CascadeType.REMOVE)
+    @OneToMany(mappedBy = "warehouse", cascade = CascadeType.PERSIST)
     private List<Product> products;
 }

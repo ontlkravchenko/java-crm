@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>java-crm</title>
+</head>
+<body>
+<div class="confirmation" th:if="${product != null}">
+    <form action="#" th:action="@{'/delete-product-' + ${product.getId()}}" method="post">
+        <h2>Are you sure you want to <br><span th:text="'delete ' + ${product.getName()}" /></h2>
+        <input type="submit" class="button" value="Yes">
+        <a href="/" class="button">No</a>
+    </form>
+</div>
+</body>
+</html>

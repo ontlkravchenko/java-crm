@@ -1,4 +1,4 @@
-package com.whereis.controllers.security;
+package com.whereis.controllers;
 
 import com.whereis.entities.User;
 import com.whereis.services.UserService;
@@ -10,10 +10,20 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
-public class RegisterController {
+public class SecurityController {
 
     @Autowired
     UserService userService;
+
+    @GetMapping("login")
+    public String showLoginForm(Model model) {
+        return "security/login";
+    }
+
+    @GetMapping("logout")
+    public String showLogOutForm() {
+        return "security/logout";
+    }
 
     @GetMapping("register")
     public String showRegistrationForm(Model model) {

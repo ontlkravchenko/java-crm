@@ -64,7 +64,7 @@ public class WarehouseController {
     @PostMapping("wh-create")
     public String processFormFromWHCreate(@ModelAttribute Warehouse warehouse) {
 
-        warehouseService.createWarehouse(warehouse);
+        warehouseService.createWarehouseForCurrentUser(warehouse);
 
         return "redirect:/";
     }
